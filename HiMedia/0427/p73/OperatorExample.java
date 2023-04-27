@@ -1,4 +1,4 @@
-package p0427.p73;
+package p73;
 
 public class OperatorExample {
 	public static void main(String[] args) {
