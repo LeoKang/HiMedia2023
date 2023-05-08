@@ -2,9 +2,9 @@ package part2.p11;
 
 public class SwitchExample {
 	public static void main(String[] args) {
-		String position = "과장";
+		String position1 = "과장";
 
-		switch (position) {
+		switch (position1) {
 		case "부장":
 			System.out.println("700만원");
 			break;
