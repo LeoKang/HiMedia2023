@@ -8,6 +8,12 @@ public class LottoExam {
 		do {
 			f = false;
 			// 1. 6개의 난수 추출
+			num[0] = 0;
+			num[1] = 1;
+			num[2] = 2;
+			num[3] = 1;
+			num[4] = 4;
+			num[5] = 5;
 //			int num1 = 1, num2 = 2, num3 = 1, num4 = 4, num5 = 5, num6 = 6;
 //			num1 = (int) (Math.random() * 45) + 1;
 //			num2 = (int) (Math.random() * 45) + 1;
@@ -51,3 +57,17 @@ public class LottoExam {
 		} while (f);
 	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
