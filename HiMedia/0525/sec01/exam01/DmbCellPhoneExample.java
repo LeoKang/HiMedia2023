@@ -18,5 +18,13 @@ public class DmbCellPhoneExample {
 		dmbCellPhone.turnOnDmb();
 		dmbCellPhone.changeChannelDmb(12);
 		dmbCellPhone.turnOffDmb();
+		
+		GalaxyNote gn = new GalaxyNote("갤럭시노트20", "빨강");
+		gn.powerOn();
+		gn.bell();
+		gn.sendVoice("갤럭시노트로 전화합니다.");
+		gn.hangUp();
+		gn.drawPicture();
+		
 	}
 }
