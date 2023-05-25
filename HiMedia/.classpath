@@ -11,5 +11,13 @@
 	<classpathentry kind="src" path="0501"/>
 	<classpathentry kind="src" path="0502"/>
 	<classpathentry kind="src" path="0508"/>
+	<classpathentry kind="src" path="0509"/>
+	<classpathentry kind="src" path="0510"/>
+	<classpathentry kind="src" path="0511"/>
+	<classpathentry kind="src" path="0512"/>
+	<classpathentry kind="src" path="0515"/>
+	<classpathentry kind="src" path="0523"/>
+	<classpathentry kind="src" path="0524"/>
+	<classpathentry kind="src" path="0525"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
