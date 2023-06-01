@@ -22,7 +22,7 @@ public class TextFieldTest implements ActionListener {
 
 		f2 = new Frame("Main");
 		f2.setSize(500, 500);
-		
+
 		Label lid = new Label("ID : ", Label.RIGHT);
 		Label lpwd = new Label("Password : ", Label.RIGHT);
 
@@ -53,12 +53,13 @@ public class TextFieldTest implements ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("[" + id.getText() + "]");
 		System.out.println("[" + pwd.getText() + "]");
-		
-		if(id.getText().equals(STRING_ID) && pwd.getText().equals(STRING_PWD)) {
+
+		if (id.getText().equals(STRING_ID) && pwd.getText().equals(STRING_PWD)) {
 //			System.out.println("로그인 성공");
 			msg.setText("로그인 성공");
 			f2.setVisible(true);
-		}else {
+			f2.dispose();
+		} else {
 			System.out.println("로그인 실패");
 			msg.setText("로그인 실패");
 		}
