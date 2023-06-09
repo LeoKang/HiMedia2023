@@ -1,41 +1,23 @@
 package awt.login;
 
 public class MemberVo {
-	private String empno;
-	private String ename;
-	private int sal;
-	private int comm;
+	private String id;
+	private String password;
 
 	public MemberVo() {
 
 	}
 
-	public MemberVo(String empno, String ename, int sal) {
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = sal;
-	}
-	
-	public MemberVo(String empno, String ename, int sal, int comm) {
-		this.empno = empno;
-		this.ename = ename;
-		this.sal = sal;
-		this.comm = comm;
+	public MemberVo(String id, String password) {
+		this.id = id;
+		this.password = password;
 	}
 
-	public String getEmpno() {
-		return empno;
+	public String getId() {
+		return id;
 	}
 
-	public String getEname() {
-		return ename;
-	}
-
-	public int getSal() {
-		return sal;
-	}
-	
-	public int getComm() {
-		return comm;
+	public String getPassword() {
+		return password;
 	}
 }

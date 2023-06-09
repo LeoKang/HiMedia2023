@@ -16,15 +16,15 @@ public class MemberDAO {
 	private Statement stmt;
 	private ResultSet rs;
 
-	public ArrayList<MemberVo> list(String name) {
+	public ArrayList<MemberVo> list(String id) {
 		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
 
 		try {
 			connDB();
 
-			String query = "SELECT * FROM emp ";
-			if (name != null) {
-				query += " where ename='" + name.toUpperCase() + "'";
+			String query = "SELECT * FROM member ";
+			if (id != null) {
+				query += " where id='" + id + "'";
 			}
 			System.out.println("SQL : " + query);
 			rs = stmt.executeQuery(query);
@@ -35,16 +35,12 @@ public class MemberDAO {
 				System.out.println("0 row selected...");
 			} else {
 				System.out.println(rs.getRow() + " rows selected...");
-//				rs.previous();
-				rs.first();
-
+				rs.previous();
 				while (rs.next()) {
-					String empno = rs.getString("empno");
-					String ename = rs.getString("ename");
-					int sal = rs.getInt("sal");
-//					int comm = rs.getInt("comm");
+					String sh = rs.getString("id");
+					String password = rs.getString("password");
 
-					MemberVo data = new MemberVo(empno, ename, sal);
+					MemberVo data = new MemberVo(sh, password);
 					list.add(data);
 				}
 			}
