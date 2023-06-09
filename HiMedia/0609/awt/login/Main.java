@@ -6,10 +6,12 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
-public class Main implements ActionListener {
-	private Frame f;
+public class Main extends WindowAdapter implements ActionListener {
+	private Frame f, fMain;
 	private TextField tfId, tfPwd, tfMsg;
 	private Button bLogin;
 	private MemberDAO dao;
@@ -21,6 +23,7 @@ public class Main implements ActionListener {
 		f.setSize(500, 300);
 		f.setLocation(2500, 10); // 따라 하지 마세요!
 		f.setLayout(null);
+		f.addWindowListener(this);
 
 		Label lid = new Label("ID : ");
 		lid.setBounds(50, 50, 100, 40);
@@ -58,6 +61,16 @@ public class Main implements ActionListener {
 		new Main();
 	}
 
+	public void windowClosing(WindowEvent e) {
+		System.out.println(e.getComponent().getName());
+		
+		if(e.getComponent().getName().equals("frame0")) {
+			fMain.dispose();
+		}else {
+			f.dispose();
+		}
+	}
+
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		System.out.println("Click!");
@@ -68,7 +81,7 @@ public class Main implements ActionListener {
 		ArrayList<MemberVo> list = dao.list(strId);
 
 		System.out.println("list.size() : " + list.size());
-		if(list.size() == 1) {
+		if (list.size() == 1) {
 			MemberVo data = (MemberVo) list.get(0);
 			String id = data.getId();
 			String pwd = data.getPassword();
@@ -78,15 +91,16 @@ public class Main implements ActionListener {
 			if (tfPwd.getText().equals(pwd)) {
 				System.out.println("로그인이 되었습니다!");
 				tfMsg.setText("로그인이 되었습니다!");
-				
-				Frame fMain = new Frame("메인프레임");
+
+				fMain = new Frame("메인프레임");
 				fMain.setBounds(2500, 200, 200, 200);
+				fMain.addWindowListener(this);
 				fMain.setVisible(true);
 			} else {
 				System.out.println("다시 입력하세요.");
 				tfMsg.setText("다시 입력하세요.");
 			}
-		}else {
+		} else {
 			tfMsg.setText("ID가 틀렸습니다. 다시 입력하세요.");
 		}
 	}
