@@ -1,6 +1,8 @@
 package sec02.exam01;
 
-public class CarExample {
+import sec02.exam01.p390.Car;
+
+public class CarExample2 {
 	public static void main(String[] args) {
 		Car myCar = new Car();
 

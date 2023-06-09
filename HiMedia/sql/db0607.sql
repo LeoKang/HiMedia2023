@@ -1,5 +1,7 @@
 --GITHUB UPLOAD
 
+
+-- 주석이 보여요?
 SELECT *
 FROM V_TAKES
 

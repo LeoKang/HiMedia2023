@@ -47,7 +47,7 @@ public class OracleInsert {
 				System.out.println("Insert fail.\n");
 			}
 
-			String sql2 = "SELECT deptno, dname, loc FROM dept";
+			String sql2 = "SELECT deptno, dname, loc FROM dept ORDER BY 1";
 			ResultSet rs = stmt.executeQuery(sql2);
 			while (rs.next()) {
 				System.out.print(rs.getString("deptno") + " ");
