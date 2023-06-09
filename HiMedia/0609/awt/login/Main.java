@@ -62,11 +62,9 @@ public class Main extends WindowAdapter implements ActionListener {
 	}
 
 	public void windowClosing(WindowEvent e) {
-		System.out.println(e.getComponent().getName());
-		
-		if(e.getComponent().getName().equals("frame0")) {
+		if (e.getComponent() == fMain) {
 			fMain.dispose();
-		}else {
+		} else if (e.getComponent() == f) {
 			f.dispose();
 		}
 	}
