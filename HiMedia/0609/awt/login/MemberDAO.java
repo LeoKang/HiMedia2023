@@ -24,7 +24,7 @@ public class MemberDAO {
 
 			String query = "SELECT * FROM member ";
 			if (id != null) {
-				query += " where id='" + id + "'";
+				query += " where id=TRIM('" + id + "')";
 			}
 			System.out.println("SQL : " + query);
 			rs = stmt.executeQuery(query);

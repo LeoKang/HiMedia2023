@@ -19,7 +19,7 @@ public class Main implements ActionListener {
 
 		f = new Frame("Login Frame");
 		f.setSize(500, 300);
-		f.setLocation(2500, 10);// 따라 하지 마세요!
+		f.setLocation(2500, 10); // 따라 하지 마세요!
 		f.setLayout(null);
 
 		Label lid = new Label("ID : ");
@@ -33,6 +33,7 @@ public class Main implements ActionListener {
 
 		tfPwd = new TextField();
 		tfPwd.setBounds(160, 130, 190, 40);
+		tfPwd.setEchoChar('*');
 
 		bLogin = new Button("Login");
 		bLogin.setBounds(380, 90, 50, 50);
@@ -40,6 +41,8 @@ public class Main implements ActionListener {
 
 		tfMsg = new TextField();
 		tfMsg.setBounds(50, 180, 370, 40);
+		tfMsg.setEditable(false);
+		tfMsg.setFocusable(false);
 
 		f.add(lid);
 		f.add(tfId);
@@ -65,8 +68,8 @@ public class Main implements ActionListener {
 		ArrayList<MemberVo> list = dao.list(strId);
 
 		System.out.println("list.size() : " + list.size());
-		for (int i = 0; i < list.size(); i++) {
-			MemberVo data = (MemberVo) list.get(i);
+		if(list.size() == 1) {
+			MemberVo data = (MemberVo) list.get(0);
 			String id = data.getId();
 			String pwd = data.getPassword();
 
@@ -74,9 +77,17 @@ public class Main implements ActionListener {
 
 			if (tfPwd.getText().equals(pwd)) {
 				System.out.println("로그인이 되었습니다!");
+				tfMsg.setText("로그인이 되었습니다!");
+				
+				Frame fMain = new Frame("메인프레임");
+				fMain.setBounds(2500, 200, 200, 200);
+				fMain.setVisible(true);
 			} else {
 				System.out.println("다시 입력하세요.");
+				tfMsg.setText("다시 입력하세요.");
 			}
+		}else {
+			tfMsg.setText("ID가 틀렸습니다. 다시 입력하세요.");
 		}
 	}
 }
