@@ -10,9 +10,12 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 
+import javax.swing.JTextField;
+
 public class Main extends WindowAdapter implements ActionListener {
 	private Frame f, fMain;
-	private TextField tfId, tfPwd, tfMsg;
+	private TextField tfPwd, tfMsg;
+	private JTextField tfId;
 	private Button bLogin;
 	private MemberDAO dao;
 
@@ -28,7 +31,8 @@ public class Main extends WindowAdapter implements ActionListener {
 		Label lid = new Label("ID : ");
 		lid.setBounds(50, 50, 100, 40);
 
-		tfId = new TextField();
+//		tfId = new JTextField();
+		tfId = new HintTextField("Input your ID.....");
 		tfId.setBounds(160, 60, 190, 40);
 
 		Label lpwd = new Label("Password : ");
