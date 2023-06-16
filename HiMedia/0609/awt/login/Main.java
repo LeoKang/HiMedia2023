@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 public class Main extends WindowAdapter implements ActionListener {
 	private Frame f, fMain;
-	private HintJPasswordField tfPwd;
+	private HintTextField tfPwd;
 	private TextField tfMsg;
 	private JTextField tfId;
 	private Button bLogin;
@@ -39,10 +39,11 @@ public class Main extends WindowAdapter implements ActionListener {
 		Label lpwd = new Label("Password : ");
 		lpwd.setBounds(50, 130, 100, 40);
 
-//		tfPwd = new TextField();
-		tfPwd = new HintJPasswordField("Input your password.....");
+		tfPwd = new HintTextField("password");
+//		tfPwd = new HintJPasswordField("password");
 		tfPwd.setBounds(160, 130, 190, 40);
-		tfPwd.setEchoChar('*');
+//		tfPwd.setEchoChar('*');
+//		System.out.println("tfPwd.getText() : " + tfPwd.getText());
 
 		bLogin = new Button("Login");
 		bLogin.setBounds(380, 90, 50, 50);
