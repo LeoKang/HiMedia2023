@@ -6,7 +6,7 @@ import java.awt.Frame;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ChoiceTest implements ActionListener{
+public class ChoiceTest {
 	public static void main(String[] args) {
 		Frame f = new Frame("Choice - Select");
 		f.setSize(300, 200);
@@ -27,16 +27,16 @@ public class ChoiceTest implements ActionListener{
 		Button b = new Button("click");
 		b.setSize(50, 20);
 		b.setLocation(100, 100);
-		b.addActionListener(this);
-		
+		b.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				System.out.println(day.getSelectedIndex());
+				System.out.println(day.getSelectedItem());
+			}
+		});
+
 		f.add(day);
 		f.add(b);
 		f.setVisible(true);
-	}
-
-	@Override
-	public void actionPerformed(ActionEvent e) {
-		// TODO Auto-generated method stub
-		System.out.println();
 	}
 }
