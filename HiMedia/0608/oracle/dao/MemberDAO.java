@@ -16,6 +16,10 @@ public class MemberDAO {
 	private Statement stmt;
 	private ResultSet rs;
 
+	public void insert(String name) {
+		//insert into Memeber values (name);
+	}
+	
 	public ArrayList<MemberVo> list() {
 		ArrayList<MemberVo> list = new ArrayList<MemberVo>();
 
